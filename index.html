@@ -604,7 +604,7 @@
     .transport-box { width: 100%; text-align: left; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line-color); font-size: 13px; line-height: 1.8; }
     .transport-box strong { color: var(--pink-dark); display: block; margin-bottom: 4px; }
 
-    /* 하객스냅 섹션 스타일 */
+    /* 하객스냅 섹션 스타일 및 공통 박스 서식 */
     .guest-snap-box {
       width: 100%;
       background: #ffffff;
@@ -616,6 +616,7 @@
     }
 
     .guest-snap-desc {
+      font-family: 'Pretendard', sans-serif;
       font-size: 13px;
       color: var(--text-sub);
       line-height: 1.7;
@@ -623,23 +624,23 @@
       word-break: keep-all;
     }
 
-    .account-accordion { width: 100%; margin-top: 20px; }
+    .account-accordion { width: 100%; margin-top: 16px; }
     .acc-header { width: 100%; padding: 16px; background: #ffffff; border: 1px solid var(--line-color); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 15px; cursor: pointer; margin-bottom: 8px; }
     .acc-body { display: none; padding: 16px; background: #ffffff; border: 1px solid var(--line-color); border-radius: 8px; margin-bottom: 12px; text-align: left; }
     .acc-body.active { display: block; }
     .acc-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 
-    .btn-pink { width: 100%; padding: 16px; border: none; border-radius: 8px; background: var(--pink-main); color: #ffffff; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(230, 170, 180, 0.3); text-decoration: none; display: inline-block; }
-    .btn-outline { padding: 6px 12px; border: 1px solid var(--pink-dark); background: #fff; color: var(--pink-dark); border-radius: 4px; font-size: 12px; cursor: pointer; }
+    .btn-pink { width: 100%; padding: 16px; border: none; border-radius: 8px; background: var(--pink-main); color: #ffffff; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(230, 170, 180, 0.3); text-decoration: none; display: inline-block; font-family: 'Pretendard', sans-serif; }
+    .btn-outline { padding: 6px 12px; border: 1px solid var(--pink-dark); background: #fff; color: var(--pink-dark); border-radius: 4px; font-size: 12px; cursor: pointer; font-family: 'Pretendard', sans-serif; }
 
-    /* 마음 전하실 곳 안내 문구 추가 스타일 */
+    /* 마음 전하실 곳 안내 문구 추가 스타일 (여유로운 상단 여백 제거 및 계좌번호와 간격 확보) */
     .account-guide-text {
       font-size: 13px;
       color: var(--text-sub);
       text-align: center;
       line-height: 1.8;
-      margin-top: 24px;
-      margin-bottom: 10px;
+      margin-top: 4px;
+      margin-bottom: 24px;
       word-break: keep-all;
     }
 
@@ -655,12 +656,12 @@
     }
 
     .rsvp-intro-desc {
-      font-size: 15px;
-      color: #333333;
-      line-height: 2.3;
-      margin-bottom: 30px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.7;
+      margin-bottom: 20px;
       word-break: keep-all;
-      font-family: 'MaruBuri', 'Nanum Myeongjo', serif;
     }
 
     /* 첫 번째 인트로 팝업 전용 스타일 */
@@ -671,7 +672,7 @@
     }
 
     .intro-modal-title {
-      font-family: 'MaruBuri', 'Nanum Myeongjo', serif;
+      font-family: 'Pretendard', sans-serif;
       font-size: 18px;
       font-weight: bold;
       color: var(--text-main);
@@ -689,10 +690,11 @@
     }
 
     .intro-modal-desc {
+      font-family: 'Pretendard', sans-serif;
       font-size: 13px;
       color: var(--text-sub);
       text-align: center;
-      line-height: 1.6;
+      line-height: 1.7;
       margin-bottom: 20px;
       word-break: keep-all;
     }
@@ -708,6 +710,7 @@
       color: var(--text-main);
       line-height: 2.2;
       margin-bottom: 26px;
+      font-family: 'Pretendard', sans-serif;
     }
 
     .intro-modal-footer {
@@ -754,6 +757,7 @@
       transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      font-family: 'Pretendard', sans-serif;
     }
 
     .custom-modal.active .custom-modal-content {
@@ -762,9 +766,9 @@
     }
 
     .rsvp-group { margin-bottom: 16px; text-align: left; }
-    .rsvp-label { font-size: 13px; color: var(--text-main); margin-bottom: 8px; display: block; font-weight: 500; }
+    .rsvp-label { font-size: 13px; color: var(--text-main); margin-bottom: 8px; display: block; font-weight: 500; font-family: 'Pretendard', sans-serif; }
     .option-buttons { display: flex; gap: 8px; }
-    .btn-option { flex: 1; padding: 11px; border: 1px solid var(--line-color); background: #ffffff; border-radius: 8px; font-size: 13px; color: var(--text-sub); cursor: pointer; }
+    .btn-option { flex: 1; padding: 11px; border: 1px solid var(--line-color); background: #ffffff; border-radius: 8px; font-size: 13px; color: var(--text-sub); cursor: pointer; font-family: 'Pretendard', sans-serif; }
     .btn-option.selected { background: var(--pink-main); color: #ffffff; border-color: var(--pink-main); font-weight: bold; }
     
     .rsvp-input-text {
@@ -873,7 +877,7 @@
     </div>
   </div>
 
-  <!-- 2. INVITATION & PROFILE (여백 대폭 확장 적용) -->
+  <!-- 2. INVITATION & PROFILE -->
   <section class="section" style="padding-top: 60px;">
     <div class="section-title-pink reveal">저희 결혼합니다</div>
     <div class="section-subtitle-en reveal">Invitation</div>
@@ -896,13 +900,11 @@
           <div class="profile-name-row">
             <div class="profile-name"><span class="profile-role">신랑</span> 민교</div>
             <div class="profile-actions">
-              <!-- 전화 걸기 버튼 -->
               <a href="tel:010-7337-6628" class="btn-contact-icon" title="전화 걸기">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
               </a>
-              <!-- 문자 보내기 버튼 -->
               <a href="sms:010-7337-6628" class="btn-contact-icon" title="문자 보내기">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
@@ -922,13 +924,11 @@
         <div class="profile-info">
           <div class="profile-name-row">
             <div class="profile-actions">
-              <!-- 전화 걸기 버튼 -->
               <a href="tel:010-5518-2362" class="btn-contact-icon" title="전화 걸기">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
               </a>
-              <!-- 문자 보내기 버튼 -->
               <a href="sms:010-5518-2362" class="btn-contact-icon" title="문자 보내기">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
@@ -982,12 +982,11 @@
     </div>
   </section>
 
-  <!-- 4. GALLERY (3*3 배열, 총 24장, 기본 9장 노출 및 펼치기/접기 기능 원상복구) -->
+  <!-- 4. GALLERY -->
   <section class="section">
     <div class="section-title-pink reveal">갤러리</div>
     <div class="section-subtitle-en reveal">Gallery</div>
     <div class="gallery-grid-3x3 reveal" id="galleryGrid">
-      <!-- 1 ~ 9번 사진 (기본 노출) -->
       <div class="photo-item" onclick="openLightbox(0)"><img src="images/photo-01.jpg" alt="갤러리1"></div>
       <div class="photo-item" onclick="openLightbox(1)"><img src="images/photo-02.jpg" alt="갤러리2"></div>
       <div class="photo-item" onclick="openLightbox(2)"><img src="images/photo-03.jpg" alt="갤러리3"></div>
@@ -998,7 +997,6 @@
       <div class="photo-item" onclick="openLightbox(7)"><img src="images/photo-08.jpg" alt="갤러리8"></div>
       <div class="photo-item" onclick="openLightbox(8)"><img src="images/photo-09.jpg" alt="갤러리9"></div>
 
-      <!-- 10 ~ 24번 사진 (펼치기 전용 나머지 사진들) -->
       <div class="photo-item gallery-expandable" onclick="openLightbox(9)"><img src="images/photo-10.jpg" alt="갤러리10"></div>
       <div class="photo-item gallery-expandable" onclick="openLightbox(10)"><img src="images/photo-11.jpg" alt="갤러리11"></div>
       <div class="photo-item gallery-expandable" onclick="openLightbox(11)"><img src="images/photo-12.jpg" alt="갤러리12"></div>
@@ -1078,7 +1076,6 @@
     <div class="section-title-pink reveal">마음 전하실 곳</div>
     <div class="section-subtitle-en reveal">Account</div>
     
-    <!-- 안내 문구 추가 -->
     <div class="account-guide-text reveal">
       참석이 어려우신 분들을 위해 계좌번호를 기재하였습니다.<br>
       너그러운 마음으로 양해 부탁드립니다.
