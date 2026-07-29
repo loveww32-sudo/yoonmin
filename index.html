@@ -20,6 +20,9 @@
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nanum+Myeongjo:wght@400;700&display=swap"
   >
 
+  <!-- 카카오 지도 API 스크립트 (새로운 키 적용) -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44a60d269264bd371040375c428f38ee&autoload=false"></script>
+
   <style>
     /* 마루 부리 폰트 불러오기 */
     @font-face {
@@ -220,7 +223,6 @@
       -webkit-touch-callout: none;
     }
 
-    /* 메인 사진 상단 펜글씨 필기 효과 (60px 크기) */
     .cover-overlay-text {
       position: absolute;
       top: 35px;
@@ -273,14 +275,14 @@
     }
 
     /* ==================================================
-        PROFILE & INVITATION (요청하신 상하 여백 대폭 확장)
+        PROFILE & INVITATION
     ================================================== */
     .invitation-text {
       font-family: 'MaruBuri', 'Nanum Myeongjo', serif;
       font-size: 15px;
       line-height: 2.2;
       color: #444444;
-      margin: 32px 0 45px 0; /* 위아래 여백을 넓혀 쾌적하게 조정 */
+      margin: 32px 0 45px 0;
       word-break: keep-all;
     }
 
@@ -288,7 +290,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 36px; /* 프로필 카드 사이 간격도 여유롭게 증가 */
+      gap: 36px;
       margin-top: 20px;
       margin-bottom: 10px;
     }
@@ -440,7 +442,6 @@
       -webkit-touch-callout: none;
     }
 
-    /* 10번째 사진부터는 기본 숨김 */
     .gallery-expandable {
       display: none;
     }
@@ -517,17 +518,17 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      touch-action: none; /* 핀치 줌 및 확대 제스처 차단 */
+      touch-action: none;
     }
 
     .lightbox-img-wrapper img {
       max-width: 92%;
       max-height: 100%;
       object-fit: contain;
-      -webkit-touch-callout: none; /* iOS Safari 저장/확대 메뉴 차단 */
+      -webkit-touch-callout: none;
       -webkit-user-select: none;
       user-select: none;
-      pointer-events: none; /* 클릭/터치 이벤트 무력화로 확대 방지 */
+      pointer-events: none;
       touch-action: none;
     }
 
@@ -553,7 +554,7 @@
     .lightbox-nav-btn.prev { left: 12px; }
     .lightbox-nav-btn.next { right: 12px; }
 
-    /* LOCATION & PHONE BUTTON & MAP PREVIEW */
+    /* LOCATION & PHONE BUTTON & KAKAO MAP VIEW */
     .location-info { width: 100%; text-align: left; margin-top: 10px; }
     
     .location-title-row {
@@ -590,38 +591,21 @@
 
     .location-addr { font-size: 13px; color: var(--text-sub); margin-bottom: 16px; }
 
-    /* 네이버 지도 미리보기 스타일 */
-    .map-preview-container {
+    /* 카카오 지도 컨테이너 스타일 */
+    #map {
       width: 100%;
+      height: 240px;
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--line-color);
       background: #ffffff;
       margin-bottom: 16px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-
-    .map-preview-img-wrap {
-      width: 100%;
-      height: 240px;
       position: relative;
-      background: #eee;
-      cursor: pointer;
-      touch-action: manipulation;
-    }
-
-    .map-preview-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;
-      -webkit-user-select: none;
-      user-select: none;
-      -webkit-touch-callout: none;
     }
 
     .map-btn-group { display: flex; gap: 8px; width: 100%; margin: 16px 0; }
-    .btn-map { flex: 1; padding: 12px; border: 1px solid var(--line-color); background: #ffffff; border-radius: 6px; font-size: 12px; cursor: pointer; color: var(--text-main); }
+    .btn-map { flex: 1; padding: 12px; border: 1px solid var(--line-color); background: #ffffff; border-radius: 6px; font-size: 12px; cursor: pointer; color: var(--text-main); font-family: 'Pretendard', sans-serif; text-align: center; }
     .transport-box { width: 100%; text-align: left; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line-color); font-size: 13px; line-height: 1.8; }
     .transport-box strong { color: var(--pink-dark); display: block; margin-bottom: 4px; }
 
@@ -654,7 +638,6 @@
     .btn-pink { width: 100%; padding: 16px; border: none; border-radius: 8px; background: var(--pink-main); color: #ffffff; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(230, 170, 180, 0.3); text-decoration: none; display: inline-block; font-family: 'Pretendard', sans-serif; }
     .btn-outline { padding: 6px 12px; border: 1px solid var(--pink-dark); background: #fff; color: var(--pink-dark); border-radius: 4px; font-size: 12px; cursor: pointer; font-family: 'Pretendard', sans-serif; }
 
-    /* 마음 전하실 곳 안내 문구 추가 스타일 (여유로운 상단 여백 제거 및 계좌번호와 간격 확보) */
     .account-guide-text {
       font-size: 13px;
       color: var(--text-sub);
@@ -665,7 +648,6 @@
       word-break: keep-all;
     }
 
-    /* RSVP 안내 박스 스타일 */
     .rsvp-intro-box {
       width: 100%;
       background: #ffffff;
@@ -685,7 +667,6 @@
       word-break: keep-all;
     }
 
-    /* 첫 번째 인트로 팝업 전용 스타일 */
     .intro-modal-header {
       position: relative;
       text-align: center;
@@ -743,7 +724,6 @@
       border-top: 1px solid var(--line-color);
     }
 
-    /* COMMON MODAL */
     .custom-modal {
       display: flex;
       position: fixed;
@@ -1053,7 +1033,7 @@
     </div>
   </section>
 
-  <!-- 6. LOCATION -->
+  <!-- 6. LOCATION (카카오 지도 적용) -->
   <section class="section">
     <div class="section-title-pink reveal">오시는 길</div>
     <div class="section-subtitle-en reveal">Location</div>
@@ -1070,11 +1050,8 @@
 
       <div class="location-addr">경기도 부천시 원미구 길주로 125</div>
 
-      <div class="map-preview-container">
-        <div class="map-preview-img-wrap" onclick="openMap('naver')">
-          <img src="images/map-preview.png" alt="오시는 길 지도 미리보기">
-        </div>
-      </div>
+      <!-- 카카오 지도가 렌더링될 영역 -->
+      <div id="map"></div>
 
       <div class="map-btn-group">
         <button class="btn-map" onclick="openMap('naver')">네이버 지도</button>
@@ -1289,6 +1266,32 @@
     });
   }, observerOptions);
 
+  /* 카카오 지도 초기화 스크립트 (다승프라자 정확한 좌표 적용) */
+  window.addEventListener('DOMContentLoaded', () => {
+    kakao.maps.load(() => {
+      const mapContainer = document.getElementById('map');
+      const mapOption = {
+        center: new kakao.maps.LatLng(37.50537, 126.76282), // 부천 다승프라자(길주로 125) 좌표
+        level: 3
+      };
+
+      const map = new kakao.maps.Map(mapContainer, mapOption);
+
+      const markerPosition = new kakao.maps.LatLng(37.50537, 126.76282);
+      const marker = new kakao.maps.Marker({
+        position: markerPosition
+      });
+      marker.setMap(map);
+
+      const iwContent = '<div style="padding:8px 12px; font-size:12px; font-family:\'Pretendard\', sans-serif; font-weight:bold; color:#333; text-align:center; white-space:nowrap;">라포레 웨딩홀</div>';
+      const infowindow = new kakao.maps.InfoWindow({
+        position: markerPosition,
+        content: iwContent
+      });
+      infowindow.open(map, marker);
+    });
+  });
+
   /* 마루 부리체 타이핑 스크립트 */
   const openingText = "민교♥윤서 결혼식에 초대합니다.";
   const typingElement = document.getElementById("typingText");
@@ -1339,7 +1342,6 @@
     }
   }
 
-  /* 첫 번째 인트로 팝업 열기/닫기 */
   function openIntroRsvp() {
     document.getElementById('introRsvpModal').classList.add('active');
   }
@@ -1353,7 +1355,6 @@
     document.getElementById('introRsvpModal').classList.remove('active');
   }
 
-  /* 인트로 팝업에서 '참석 여부 전달' 버튼 누를 때 */
   function goToDetailedRsvp() {
     document.getElementById('introRsvpModal').classList.remove('active');
     setTimeout(() => {
@@ -1426,7 +1427,6 @@
     }
   }
 
-  // 라이트박스 열렸을 때 모바일 핀치줌(두 손가락 확대) 및 제스처 줌 원천 차단
   document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
   });
@@ -1437,7 +1437,6 @@
     e.preventDefault();
   });
 
-  // 라이트박스 내부 이미지 더블탭 확대 방지
   let lastTouchEnd = 0;
   document.getElementById('lightboxModal').addEventListener('touchend', function (e) {
     const now = (new Date()).getTime();
@@ -1447,7 +1446,6 @@
     lastTouchEnd = now;
   }, { passive: false });
 
-  /* 갤러리 펼치기 / 접기 토글 함수 */
   function toggleGallery() {
     const expandables = document.querySelectorAll('.gallery-expandable');
     const btn = document.getElementById('galleryToggleBtn');
@@ -1546,7 +1544,6 @@
 
   function selectOption(btn) {
     const buttons = btn.parentElement.querySelectorAll('.btn-option');
-    buttons.buttons?.forEach?.(b => b.classList.remove('selected'));
     buttons.forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
   }
