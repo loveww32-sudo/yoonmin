@@ -8,18 +8,7 @@
   >
   <title>민교 & 윤서</title>
 
-  <!-- Fonts: Pretendard, Caveat, MaruBuri -->
-  <link
-    rel="stylesheet"
-    as="style"
-    crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-  >
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff"
-    as="style"
-  >
+  <!-- Fonts: Caveat, Komika Title (Pretendard와 MaruBuri는 아래 style 태그 내부에 적용) -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap"
@@ -30,6 +19,10 @@
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44a60d269264bd371040375c428f38ee&libraries=services&autoload=false"></script>
 
   <style>
+    /* 1. 프리텐다드 웹 폰트 불러오기 (최상단에 위치해야 함) */
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+    /* 2. 마루부리 웹 폰트 정의 (MIME 오류 해결을 위해 HTML <link> 대신 CSS 내부에서 정의) */
     @font-face {
       font-family: 'MaruBuri';
       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
@@ -52,7 +45,8 @@
       padding: 0;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
-      font-family: 'Pretendard', -apple-system, sans-serif !important;
+      /* 전체 폰트를 프리텐다드로 지정 */
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
     }
 
     /* 대제목 및 프로필 역할(신랑, 신부) 전용 마루부리체 적용 클래스 */
@@ -128,16 +122,16 @@
       position: relative;
     }
 
+    /* 하드웨어 가속 켜기 및 애니메이션 시간 조정 (스크롤 최적화) */
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
+      transform: translate3d(0, 30px, 0);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .reveal.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0);
     }
 
     .opening-overlay {
@@ -338,7 +332,8 @@
 
     .profile-name { 
       font-size: 18px; 
-      font-weight: 600;
+      font-weight: 500;
+      color: #4a4a4a;
     }
 
     .profile-actions {
@@ -596,6 +591,25 @@
       margin-bottom: 24px;
     }
 
+    /* 카카오페이 송금 버튼 스타일 */
+    .btn-kakaopay {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #FEE500;
+      color: #191919;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
     .rsvp-intro-box {
       width: 100%;
       background: #ffffff;
@@ -680,7 +694,8 @@
 
   <!-- 1. MAIN COVER -->
   <div class="main-cover">
-    <img src="images/main.jpg" alt="메인 사진" class="main-cover-img">
+    <!-- 비동기 로딩을 위한 decoding 속성 추가 -->
+    <img src="images/main.jpg" alt="메인 사진" class="main-cover-img" decoding="async">
     <div class="cover-overlay-text" id="mainCoverText">
       <div class="cover-script">We're getting<br>Married!</div>
     </div>
@@ -901,6 +916,11 @@
           </div>
           <button class="btn-outline" onclick="copyAccount('000-000-000000', '신랑측')">복사</button>
         </div>
+        <!-- 신랑 카카오페이 버튼 (송금링크 꼭 교체하세요!) -->
+        <a href="여기에_신랑_송금링크_붙여넣기" target="_blank" class="btn-kakaopay">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.5 0-10 3.5-10 7.8 0 2.8 1.8 5.2 4.5 6.5-.2 1-.9 3.2-.9 3.3 0 .1.1.2.2.2.1 0 .2 0 .3-.1.4-.3 3.5-2.4 4.1-2.8.6.1 1.2.1 1.8.1 5.5 0 10-3.5 10-7.8S17.5 3 12 3z"/></svg> 
+          카카오페이 송금
+        </a>
       </div>
 
       <div class="acc-header" onclick="toggleAcc('brideAcc')"><span>신부측 계좌번호</span><span>▼</span></div>
@@ -913,6 +933,11 @@
           </div>
           <button class="btn-outline" onclick="copyAccount('000-000-000000', '신부측')">복사</button>
         </div>
+        <!-- 신부 카카오페이 버튼 (송금링크 꼭 교체하세요!) -->
+        <a href="여기에_신부_송금링크_붙여넣기" target="_blank" class="btn-kakaopay">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.5 0-10 3.5-10 7.8 0 2.8 1.8 5.2 4.5 6.5-.2 1-.9 3.2-.9 3.3 0 .1.1.2.2.2.1 0 .2 0 .3-.1.4-.3 3.5-2.4 4.1-2.8.6.1 1.2.1 1.8.1 5.5 0 10-3.5 10-7.8S17.5 3 12 3z"/></svg> 
+          카카오페이 송금
+        </a>
       </div>
     </div>
   </section>
@@ -1039,38 +1064,73 @@
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
 <script>
-  /* 카카오 지도 주소 검색 및 7,8번 출구 포함 최적화 스크립트 */
+  /* 모바일 확대/축소 강력 방지 스크립트 */
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function(event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, { passive: false });
+
+  // 데스크톱/트랙패드 휠 줌 방지
+  document.addEventListener('wheel', function(event) {
+    if (event.ctrlKey) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+
+
+  /* 카카오 지도 주소 검색 및 지연 로딩(최적화) 스크립트 */
   window.addEventListener('DOMContentLoaded', () => {
-    kakao.maps.load(() => {
-      const mapContainer = document.getElementById('map');
-      const mapOption = {
-        center: new kakao.maps.LatLng(37.50537, 126.76282),
-        level: 3
-      };
+    const mapContainer = document.getElementById('map');
+    let isMapLoaded = false;
 
-      const map = new kakao.maps.Map(mapContainer, mapOption);
-      const geocoder = new kakao.maps.services.Geocoder();
+    // 지도가 화면에 보이기 직전에 로드되도록 Observer 설정
+    const mapObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !isMapLoaded) {
+          isMapLoaded = true;
+          kakao.maps.load(() => {
+            const mapOption = {
+              center: new kakao.maps.LatLng(37.50537, 126.76282),
+              level: 3
+            };
+            const map = new kakao.maps.Map(mapContainer, mapOption);
+            const geocoder = new kakao.maps.services.Geocoder();
 
-      geocoder.addressSearch('경기도 부천시 원미구 길주로 125', function(result, status) {
-        if (status === kakao.maps.services.Status.OK) {
-          const weddingCoords = new kakao.maps.LatLng(result[0].y, result[0].x);
+            geocoder.addressSearch('경기도 부천시 원미구 길주로 125', function(result, status) {
+              if (status === kakao.maps.services.Status.OK) {
+                const weddingCoords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                const marker = new kakao.maps.Marker({
+                  map: map,
+                  position: weddingCoords
+                });
 
-          const marker = new kakao.maps.Marker({
-            map: map,
-            position: weddingCoords
+                const iwContent = '<div style="padding:8px 12px; font-size:12px; font-weight:bold; color:#333; text-align:center; white-space:nowrap;">라포레 웨딩홀</div>';
+                const infowindow = new kakao.maps.InfoWindow({
+                  content: iwContent
+                });
+                infowindow.open(map, marker);
+
+                const adjustedCenter = new kakao.maps.LatLng(result[0].y, parseFloat(result[0].x) - 0.0008);
+                map.setCenter(adjustedCenter);
+              }
+            });
           });
-
-          const iwContent = '<div style="padding:8px 12px; font-size:12px; font-weight:bold; color:#333; text-align:center; white-space:nowrap;">라포레 웨딩홀</div>';
-          const infowindow = new kakao.maps.InfoWindow({
-            content: iwContent
-          });
-          infowindow.open(map, marker);
-
-          const adjustedCenter = new kakao.maps.LatLng(result[0].y, parseFloat(result[0].x) - 0.0008);
-          map.setCenter(adjustedCenter);
+          mapObserver.disconnect(); // 지도 로드 후에는 관찰 해제하여 메모리 확보
         }
       });
-    });
+    }, { rootMargin: '300px 0px' }); // 화면에 닿기 300px 전부터 미리 로드 시작
+
+    mapObserver.observe(mapContainer);
   });
 
   /* SCROLL REVEAL OBSERVER */
