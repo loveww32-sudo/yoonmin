@@ -8,7 +8,7 @@
   >
   <title>민교 & 윤서</title>
 
-  <!-- Fonts: Pretendard, Nanum Myeongjo, Caveat, Maru Buri(마루 부리) -->
+  <!-- Fonts: Pretendard, Caveat -->
   <link
     rel="stylesheet"
     as="style"
@@ -17,21 +17,14 @@
   >
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nanum+Myeongjo:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap"
   >
+  <link href="https://fonts.cdnfonts.com/css/komika-title" rel="stylesheet">
 
-  <!-- 카카오 지도 API 스크립트 (제공해주신 키 적용) -->
+  <!-- 카카오 지도 API 스크립트 -->
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44a60d269264bd371040375c428f38ee&libraries=services&autoload=false"></script>
 
   <style>
-    /* 마루 부리 폰트 불러오기 */
-    @font-face {
-      font-family: 'MaruBuri';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-
     :root {
       --bg-color: #fdf8f5;
       --text-main: #333333;
@@ -47,6 +40,7 @@
       padding: 0;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
+      font-family: 'Pretendard', -apple-system, sans-serif !important;
     }
 
     ::-webkit-scrollbar {
@@ -66,7 +60,6 @@
       min-height: 100%;
       background: #111111;
       color: var(--text-main);
-      font-family: 'Pretendard', -apple-system, sans-serif;
       -webkit-user-select: none;
       user-select: none;
       overflow-y: scroll;
@@ -123,7 +116,6 @@
     }
 
     .typing-text {
-      font-family: 'MaruBuri', 'Nanum Myeongjo', serif;
       font-size: 17px;
       color: #222222;
       letter-spacing: -0.3px;
@@ -169,7 +161,7 @@
     }
 
     .section-title-pink {
-      font-family: 'MaruBuri', 'Nanum Myeongjo', serif;
+      font-weight: 600;
       font-size: 19px;
       color: var(--pink-dark);
       margin-bottom: 4px;
@@ -182,7 +174,6 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 32px;
-      font-family: 'Pretendard', sans-serif;
     }
 
     .main-cover {
@@ -209,12 +200,12 @@
     }
 
     .cover-script {
-      font-family: 'Caveat', cursive;
-      font-size: 60px;
+      font-family: 'Komika Title', sans-serif !important;
+      font-size: 42px;
       color: #ffcad4;
-      line-height: 1.1;
-      letter-spacing: 1px;
-      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: 1.5px;
+      font-weight: bold;
       white-space: nowrap;
       overflow: hidden;
       width: 0;
@@ -241,14 +232,12 @@
       border-top: 1px solid #555555;
       border-bottom: 1px solid #555555;
       text-align: center;
-      font-family: 'MaruBuri', 'Nanum Myeongjo', serif;
-      font-size: 15px;
+      font-size: 14px;
       color: #333333;
       line-height: 1.9;
     }
 
     .invitation-text {
-      font-family: 'MaruBuri', 'Nanum Myeongjo', serif;
       font-size: 15px;
       line-height: 2.2;
       color: #444444;
@@ -308,7 +297,7 @@
 
     .profile-name { 
       font-size: 18px; 
-      font-family: 'MaruBuri', 'Nanum Myeongjo', serif; 
+      font-weight: 600;
     }
 
     .profile-actions {
@@ -346,7 +335,7 @@
     .profile-parents { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
 
     .calendar { width: 100%; max-width: 320px; margin-top: 10px; }
-    .calendar-header { font-family: 'MaruBuri', 'Nanum Myeongjo', serif; font-size: 20px; color: var(--pink-dark); margin-bottom: 20px; }
+    .calendar-header { font-weight: 600; font-size: 20px; color: var(--pink-dark); margin-bottom: 20px; }
     .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px 0; font-size: 13px; }
     .calendar-grid div { height: 32px; display: flex; justify-content: center; align-items: center; }
     .weekday { color: var(--pink-dark); font-size: 12px; }
@@ -481,7 +470,7 @@
 
     .location-info { width: 100%; text-align: left; margin-top: 10px; }
     .location-title-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-    .location-title { font-size: 18px; font-family: 'MaruBuri', 'Nanum Myeongjo', serif; }
+    .location-title { font-size: 18px; font-weight: 600; }
 
     .btn-call-icon {
       background: var(--pink-main);
@@ -512,7 +501,21 @@
     }
 
     .map-btn-group { display: flex; gap: 8px; width: 100%; margin: 16px 0; }
-    .btn-map { flex: 1; padding: 12px; border: 1px solid var(--line-color); background: #ffffff; border-radius: 6px; font-size: 12px; cursor: pointer; color: var(--text-main); text-align: center; }
+    .btn-map { 
+      flex: 1; 
+      padding: 12px 8px; 
+      border: 1px solid var(--line-color); 
+      background: #ffffff; 
+      border-radius: 6px; 
+      font-size: 12px; 
+      cursor: pointer; 
+      color: var(--text-main); 
+      text-align: center; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
     
     .transport-box { width: 100%; text-align: left; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line-color); font-size: 13px; line-height: 1.8; }
     .transport-box strong { color: var(--pink-dark); display: block; margin-bottom: 4px; }
@@ -726,7 +729,7 @@
       </div>
     </div>
 
-    <p class="reveal" style="margin-top: 40px; font-size: 16px; font-family: 'MaruBuri', 'Nanum Myeongjo', serif;">
+    <p class="reveal" style="margin-top: 40px; font-size: 15px;">
       민교<span style="color: var(--pink-dark);">♥</span>윤서의 결혼식까지 <span id="days" style="font-weight: bold; color: var(--pink-dark);">0</span>일 남았습니다.
     </p>
 
@@ -786,7 +789,7 @@
     </div>
   </section>
 
-  <!-- 6. LOCATION (카카오 지도 주소 검색 기반 정확한 핀 배치) -->
+  <!-- 6. LOCATION -->
   <section class="section">
     <div class="section-title-pink reveal">오시는 길</div>
     <div class="section-subtitle-en reveal">Location</div>
@@ -804,10 +807,20 @@
       <div id="map"></div>
 
       <div class="map-btn-group">
-        <button class="btn-map" onclick="openMap('naver')">네이버 지도</button>
-        <button class="btn-map" onclick="openMap('kakao')">카카오맵</button>
-        <button class="btn-map" onclick="openMap('tmap')">티맵</button>
+        <button class="btn-map" onclick="openMap('naver')">
+          <img src="https://i.namu.wiki/i/VtONuIG-XlS7ipSUamPJEoutKzm4HK4S5KbLJ4AzX54mAOAeYvkZrkXiwTyKU6rp-9z92jz3T2PpRO96HNA8cXcdnDG1C1zx-pWRjB6vFNF-xfMZplKp-gzE9UBd8rWlA6YWK1JIlsA7pT1OcM67Ug.webp" alt="네이버 지도" style="width: 15px; height: 15px; object-fit: contain; border-radius: 3px;">
+          네이버 지도
+        </button>
+        <button class="btn-map" onclick="openMap('kakao')">
+          <img src="https://developers.kakao.com/tool/resource/static/img/logo/map/kakaomap_basic.png" alt="카카오맵" style="width: 15px; height: 15px; object-fit: contain; border-radius: 3px;">
+          카카오맵
+        </button>
+        <button class="btn-map" onclick="openMap('tmap')">
+          <img src="https://i.namu.wiki/i/MZ5NLYB0DmQ770H9bkGX3eLdsofn_GuDG-cUJCMnJfN52NBCXuTZ8TR-0S68urgBZyROn_tXzK_SmNrY5s2rr2lqgb5nOuVypTit_rGctHBGbwll2GfhLHfQGi3Q5eIbElwyOdtBfOuatA0FY0I40g.svg" alt="티맵" style="width: 15px; height: 15px; object-fit: contain; border-radius: 3px;">
+          티맵
+        </button>
       </div>
+      
       <div class="transport-box">
         <strong>지하철 안내</strong>
         <p>7호선 상동역 8번 출구에서 도보 3분</p>
@@ -903,7 +916,7 @@
     <div class="intro-modal-info">♡ 신랑 민교, 신부 윤서<br>📅 2026년 12월 12일 토요일 오후 12시 30분<br>📍 라포레 웨딩홀</div>
     <button class="btn-pink" onclick="goToDetailedRsvp()">참석 여부 전달</button>
     <div class="intro-modal-footer">
-      <label class="dont-show-today"><input type="checkbox" id="neverShowTodayIntro"><span>오늘 하루 보지않기</span></label>
+      <label class="dont-show-today"><input type="checkbox" id="neverShowTodayIntro"><span>오늘 하루 보지 않기</span></label>
       <button class="btn-outline" onclick="closeIntroRsvp()" style="border: none; padding: 4px 8px;">닫기</button>
     </div>
   </div>
@@ -953,40 +966,35 @@
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
 <script>
-  /* 카카오 지도 주소 검색(Geocoder) 기반 정확한 건물 위치 핀 배치 스크립트 */
+  /* 카카오 지도 주소 검색 및 7,8번 출구 포함 최적화 스크립트 */
   window.addEventListener('DOMContentLoaded', () => {
     kakao.maps.load(() => {
       const mapContainer = document.getElementById('map');
       const mapOption = {
-        center: new kakao.maps.LatLng(37.50537, 126.76282), // 기본 임시 센터
+        center: new kakao.maps.LatLng(37.50537, 126.76282),
         level: 3
       };
 
       const map = new kakao.maps.Map(mapContainer, mapOption);
-
-      // 주소-좌표 변환 객체 생성
       const geocoder = new kakao.maps.services.Geocoder();
 
-      // '경기도 부천시 원미구 길주로 125' 정확한 주소로 좌표 검색
       geocoder.addressSearch('경기도 부천시 원미구 길주로 125', function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
-          const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+          const weddingCoords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-          // 결과값으로 받은 위치를 마커로 표시
           const marker = new kakao.maps.Marker({
             map: map,
-            position: coords
+            position: weddingCoords
           });
 
-          // 인포윈도우로 장소 명칭 표출
-          const iwContent = '<div style="padding:8px 12px; font-size:12px; font-family:\'Pretendard\', sans-serif; font-weight:bold; color:#333; text-align:center; white-space:nowrap;">라포레 웨딩홀</div>';
+          const iwContent = '<div style="padding:8px 12px; font-size:12px; font-weight:bold; color:#333; text-align:center; white-space:nowrap;">라포레 웨딩홀</div>';
           const infowindow = new kakao.maps.InfoWindow({
             content: iwContent
           });
           infowindow.open(map, marker);
 
-          // 지도의 중심을 결과값으로 받은 위치로 이동
-          map.setCenter(coords);
+          const adjustedCenter = new kakao.maps.LatLng(result[0].y, parseFloat(result[0].x) - 0.0008);
+          map.setCenter(adjustedCenter);
         }
       });
     });
@@ -1001,7 +1009,7 @@
     });
   }, observerOptions);
 
-  /* 마루 부리체 타이핑 스크립트 */
+  /* 타이핑 스크립트 */
   const openingText = "민교♥윤서 결혼식에 초대합니다.";
   const typingElement = document.getElementById("typingText");
   let charIndex = 0;
@@ -1130,10 +1138,26 @@
     navigator.clipboard.writeText(no).then(() => { alert(`${side} 계좌번호가 복사되었습니다.`); });
   }
   function openMap(type) {
-    const destination = encodeURIComponent("경기도 부천시 원미구 길주로 125 라포레웨딩홀");
-    if (type === 'naver') window.open(`https://map.naver.com/v5/search/${destination}`, '_blank');
-    else if (type === 'kakao') window.open(`https://map.kakao.com/link/search/${destination}`, '_blank');
-    else if (type === 'tmap') window.open(`https://apis.openapi.sk.com/tmap/app/routes?name=${destination}`, '_blank');
+    const destination = encodeURIComponent("라포레웨딩홀");
+    const lat = "37.50537"; // 라포레 웨딩홀 위도
+    const lng = "126.76282"; // 라포레 웨딩홀 경도
+
+    if (type === 'naver') {
+      window.open(`https://map.naver.com/v5/search/${destination}`, '_blank');
+    } else if (type === 'kakao') {
+      window.open(`https://map.kakao.com/link/search/${destination}`, '_blank');
+    } else if (type === 'tmap') {
+      const userAgent = navigator.userAgent.toLowerCase();
+      
+      if (/iphone|ipad|ipod/.test(userAgent)) {
+        window.location.href = `tmap://route?goalname=${destination}&goalx=${lng}&goaly=${lat}`;
+      } else if (/android/.test(userAgent)) {
+        const intentUrl = `intent://route?goalname=${destination}&goalx=${lng}&goaly=${lat}#Intent;package=com.skt.tmap.ku;scheme=tmap;end;`;
+        window.location.href = intentUrl;
+      } else {
+        window.open(`https://tmap.co.kr/`, '_blank');
+      }
+    }
   }
   function openCallModal() { document.getElementById('callModal').classList.add('active'); }
   function closeCallModal() { document.getElementById('callModal').classList.remove('active'); }
@@ -1161,20 +1185,21 @@
     const message = document.getElementById('guestMessage').value.trim();
 
     const formActionUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScQ4CIbU1AMQIEKWIhO4Qj2oBDiwimNLN88-bg7I7gT9uc9iQ/formResponse";
-    const form = document.createElement('form');
-    form.method = 'POST'; form.action = formActionUrl; form.target = 'hidden_iframe';
-    const data = {
-      'entry.475380520': side, 'entry.2111103695': attend,
-      'entry.785189903': meal, 'entry.1144780947': name, 'entry.772260972': message
-    };
-    for (let key in data) {
-      const input = document.createElement('input');
-      input.type = 'hidden'; input.name = key; input.value = data[key];
-      form.appendChild(input);
-    }
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
+    (form => {
+      form.method = 'POST'; form.action = formActionUrl; form.target = 'hidden_iframe';
+      const data = {
+        'entry.475380520': side, 'entry.2111103695': attend,
+        'entry.785189903': meal, 'entry.1144780947': name, 'entry.772260972': message
+      };
+      for (let key in data) {
+        const input = document.createElement('input');
+        input.type = 'hidden'; input.name = key; input.value = data[key];
+        form.appendChild(input);
+      }
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    })(document.createElement('form'));
     alert(`${name}님, 참석 여부가 성공적으로 전달되었습니다. 감사합니다!`);
     closeRsvp();
   }
