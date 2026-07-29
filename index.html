@@ -111,7 +111,7 @@
       color: var(--text-main);
       -webkit-user-select: none;
       user-select: none;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
 
     body.stop-scroll {
@@ -130,8 +130,8 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(30px);
+      transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: opacity, transform;
     }
 
@@ -944,16 +944,16 @@
 <div class="custom-modal" id="parkingModal">
   <div class="custom-modal-content" style="text-align: center;">
     <div class="intro-modal-header">
-      <div class="intro-modal-title parking-modal-title" style="font-family: 'MaruBuri', sans-serif !important;">주차장 및 대중교통 안내</div>
+      <div class="intro-modal-title parking-modal-title">주차장 및 대중교통 안내</div>
       <button class="intro-modal-close" onclick="closeParkingModal()">✕</button>
     </div>
-    <div class="parking-modal-desc" style="font-family: 'Pretendard', -apple-system, sans-serif !important;">
+    <div style="font-family: 'Pretendard', -apple-system, sans-serif !important; font-size: 13px; color: var(--text-sub); line-height: 1.7; margin-bottom: 16px;">
       라포레 웨딩홀의 상세 주차장 및 대중교통 이용 안내를 확인하실 수 있습니다.
     </div>
     <div style="margin-bottom: 20px;">
       <img src="https://www.laforetwedding.co.kr/location/parking-qr.png" alt="주차 안내 QR코드" style="width: 140px; height: 140px; object-fit: contain; border-radius: 8px; border: 1px solid var(--line-color);">
     </div>
-    <div class="parking-modal-highlight" style="font-family: 'MaruBuri', sans-serif !important; font-size: 15px; font-weight: bold; color: var(--text-main);">
+    <div style="font-family: 'MaruBuri', sans-serif !important; font-size: 15px; font-weight: bold; color: var(--text-main); margin-bottom: 16px;">
       ※ 대중교통을 이용해 주시면 감사하겠습니다.
     </div>
     <a href="https://www.laforetwedding.co.kr/info/" target="_blank" class="btn-pink" style="margin-bottom: 12px; display: block; text-decoration: none; font-family: 'Pretendard', -apple-system, sans-serif !important;">
@@ -1130,6 +1130,11 @@
       localStorage.setItem('hideIntroRsvpUntil', expireTime);
     }
     document.getElementById('introRsvpModal').classList.remove('active');
+    
+    // 첫 번째 팝업(참석 여부)을 닫을 때 주차 안내 팝업을 순서대로 띄움
+    setTimeout(() => {
+      openParkingModal();
+    }, 400);
   }
   function goToDetailedRsvp() {
     document.getElementById('introRsvpModal').classList.remove('active');
