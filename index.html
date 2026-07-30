@@ -869,24 +869,23 @@
         </button>
       </div>
       
-      <div class="transport-box">
-        <strong>지하철 안내</strong>
-        <p>7호선 상동역 8번 출구에서 도보 3분</p>
-      </div>
-      <div class="transport-box">
-        <strong>주차 안내</strong>
-        <p>
-          - 건물 내 하객 주차장 이용 가능 (3시간 무료)<br>
-          -<strong>제2주차장:</strong> <span style="font-size: 13px; letter-spacing: -0.4px; word-break: keep-all;">경기 부천시 원미구 송내대로 388 부천 테크노파크 2단지 (3시간 무료)</span><br><br>
-          ※ 예식장 주차장이 협소합니다.<br>
-          &nbsp;하객분들은 제2주차장에 주차하시고 셔틀버스 이용 부탁드립니다.<br>
-          🚌 셔틀버스 운행 간격 : 예식 1시간 30분 전부터 상시 운행
-        </p>
-        <button class="btn-pink" style="margin-top: 14px; padding: 12px; font-size: 13px;" onclick="openParkingModal()">
-          🚗 주차장 및 대중교통 이용안내 
-        </button>
-      </div>
-    </div>
+     <div class="transport-box">
+  <strong>자차 안내</strong>
+  <p style="line-height: 1.8;">
+    <strong>제 1 주차장 : 다승프라자 (라포레 웨딩홀 건물)</strong><br>
+    <span style="font-size: 13px; color: var(--text-sub); letter-spacing: -0.4px;">경기 부천시 원미구 길주로 125 (3시간 무료)</span><br><br>
+
+    <strong>제 2 주차장 : 부천테크노파크 2단지</strong><br>
+    <span style="font-size: 13px; color: var(--text-sub); letter-spacing: -0.4px;">경기 부천시 원미구 송내대로 388 (3시간 무료)</span><br><br>
+
+    ※ 예식장 주차장이 협소합니다.<br>
+    &nbsp;하객분들은 제2주차장에 주차하시고 셔틀버스 이용 부탁드립니다.<br>
+    🚌 셔틀버스 운행 간격 : 예식 1시간 30분 전부터 상시 운행
+  </p>
+  <button class="btn-pink" style="margin-top: 14px; padding: 12px; font-size: 13px;" onclick="openParkingModal()">
+    🚗 주차장 및 대중교통 이용안내 
+  </button>
+</div>
   </section>
 
   <!-- 7. ACCOUNT -->
@@ -894,7 +893,7 @@
     <div class="section-title-pink reveal">마음 전하실 곳</div>
     <div class="section-subtitle-en reveal">Account</div>
     <div class="account-guide-text reveal">
-      참석이 어려우신 분들을 위해 계좌번호를 기재하였습니다.<br>너그러운 마음으로 양해 부탁드립니다.
+      참석이 어려우신 분들을 위해 조심스레 마음 전하실 곳을 남깁니다.<br>멀리서 보내주시는 축복도 잊지 않고 예쁘게 살겠습니다.
     </div>
 
     <div class="account-accordion reveal">
@@ -940,7 +939,7 @@
     <div class="section-subtitle-en">RSVP</div>
     <div class="rsvp-intro-box">
       <p class="rsvp-intro-desc">
-        결혼식에 참석해주시는 모든 분들을<br>더욱 특별하게 모시고자 하오니,<br>참석 여부를 알려주시면 감사하겠습니다.
+        저희의 새로운 시작을 함께해 주실<br>소중한 분들을 위해 정성껏 자리를 준비하려 합니다.<br>참석 여부를 미리 알려주시면 감사하겠습니다.
       </p>
       <button class="btn-pink" onclick="openRsvp()">참석 여부 전달하기</button>
     </div>
@@ -1001,7 +1000,7 @@
       <div class="intro-modal-title">참석 여부 전달</div>
       <button class="intro-modal-close" onclick="closeIntroRsvp()">✕</button>
     </div>
-    <div class="intro-modal-desc">결혼식에 참석해주시는 모든 분들을<br>더욱 특별하게 모시고자 하오니,<br>참석 여부 전달을 부탁드립니다.</div>
+    <div class="intro-modal-desc">저희의 새로운 시작을 함께해 주실<br>소중한 분들을 위해 정성껏 자리를 준비하려 합니다.<br>참석 여부를 미리 알려주시면 감사하겠습니다.</div>
     <hr class="intro-modal-divider">
     <div class="intro-modal-info"><span style="color: #f6b0b9;">♥</span> 신랑 민교, 신부 윤서<br>📅 2026년 12월 12일 토요일 오후 12시 30분<br>📍 라포레 웨딩홀</div>
     <button class="btn-pink" onclick="goToDetailedRsvp()">참석 여부 전달</button>
@@ -1016,21 +1015,21 @@
   <div class="custom-modal-content">
     <p class="section-title-pink" style="margin-bottom: 12px;">참석 여부 전달</p>
     <div class="rsvp-group">
-      <span class="rsvp-label">어느 분의 하객이신가요?</span>
+      <span class="rsvp-label">신랑 민교, 신부 윤서 중 어느 분과의 인연이신가요?</span>
       <div class="option-buttons" id="sideGroup">
-        <button class="btn-option selected" onclick="selectOption(this)" data-value="신랑측">신랑측</button>
-        <button class="btn-option" onclick="selectOption(this)" data-value="신부측">신부측</button>
+        <button class="btn-option selected" onclick="selectOption(this)" data-value="신랑 측">신랑 측</button>
+        <button class="btn-option" onclick="selectOption(this)" data-value="신부 측">신부 측</button>
       </div>
     </div>
     <div class="rsvp-group">
-      <span class="rsvp-label">참석하실 수 있나요?</span>
+      <span class="rsvp-label">12월 12일 토요일, 예식에 함께해 주실 수 있나요?</span>
       <div class="option-buttons" id="attendGroup">
-        <button class="btn-option selected" onclick="selectOption(this)" data-value="참석할게요">참석할게요</button>
+        <button class="btn-option selected" onclick="selectOption(this)" data-value="참석 할게요">참석 할게요</button>
         <button class="btn-option" onclick="selectOption(this)" data-value="참석이 어려워요">참석이 어려워요</button>
       </div>
     </div>
     <div class="rsvp-group">
-      <span class="rsvp-label">식사를 하실 예정인가요?</span>
+      <span class="rsvp-label">식사를 하고 가실 수 있나요?</span>
       <div class="option-buttons" id="mealGroup">
         <button class="btn-option selected" onclick="selectOption(this)" data-value="네">네</button>
         <button class="btn-option" onclick="selectOption(this)" data-value="아니오">아니오</button>
@@ -1038,11 +1037,15 @@
       </div>
     </div>
     <div class="rsvp-group">
-      <span class="rsvp-label">성함이 어떻게 되시나요?</span>
+      <span class="rsvp-label">귀한 발걸음 해 주시는 분의 성함을 적어주세요.</span>
       <input type="text" id="guestName" class="rsvp-input-text" placeholder="참석자 본인 성함">
     </div>
+<div class="rsvp-group">
+      <span class="rsvp-label">동명이인 구분을 위해 핸드폰 뒷번호(4자리)를 적어주세요.</span>
+      <input type="text" id="guestPhone" class="rsvp-input-text" placeholder="예: 1234" maxlength="4">
+    </div>
     <div class="rsvp-group">
-      <span class="rsvp-label">신랑, 신부에게 전하실 말씀</span>
+      <span class="rsvp-label">두 사람의 새로운 출발에 따뜻한 한마디를 남겨주세요.</span>
       <textarea id="guestMessage" class="rsvp-textarea" placeholder="축하 메시지나 전달사항을 적어주세요."></textarea>
     </div>
     <button class="btn-pink" onclick="submitRsvp()" style="margin-top: 6px;">체크 완료하기</button>
@@ -1317,17 +1320,19 @@
   function submitRsvp() {
     const name = document.getElementById('guestName').value.trim();
     if (!name) { alert('성함을 입력해 주세요.'); return; }
+   const phone = document.getElementById('guestPhone').value.trim();
+    if (!phone) { alert('동명이인 구분을 위해 핸드폰 뒷번호 4자리를 입력해 주세요.'); return; }
     const side = document.querySelector('#sideGroup .btn-option.selected').getAttribute('data-value');
     const attend = document.querySelector('#attendGroup .btn-option.selected').getAttribute('data-value');
     const meal = document.querySelector('#mealGroup .btn-option.selected').getAttribute('data-value');
     const message = document.getElementById('guestMessage').value.trim();
 
-    const formActionUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScQ4CIbU1AMQIEKWIhO4Qj2oBDiwimNLN88-bg7I7gT9uc9iQ/formResponse";
+    const formActionUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdcaOzy7_-6suxzgx-MccjhcBfSIqz1lGh-prDds1Bko2l8TA/formResponse";
     (form => {
       form.method = 'POST'; form.action = formActionUrl; form.target = 'hidden_iframe';
       const data = {
-        'entry.475380520': side, 'entry.2111103695': attend,
-        'entry.785189903': meal, 'entry.1144780947': name, 'entry.772260972': message
+        'entry.905820418': side, 'entry.1273835771': attend,
+        'entry.655889088': meal, 'entry.1400007732': name, 'entry.1654440028': phone, 'entry.2088337592': message
       };
       for (let key in data) {
         const input = document.createElement('input');
