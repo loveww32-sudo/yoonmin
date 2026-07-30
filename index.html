@@ -587,21 +587,22 @@ font-family: 'MaruBuri', sans-serif !important;
 
     /* 카카오페이 송금 버튼 스타일 */
     .btn-kakaopay {
-      width: 100%;
-      padding: 10px;
+      width: max-content; 
+      padding: 6px 12px;  
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;  
       background: #FEE500;
       color: #191919;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
       cursor: pointer;
       text-decoration: none;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       margin-top: 12px;
+      margin-left: auto;
     }
 
     .rsvp-intro-box {
@@ -674,7 +675,57 @@ font-family: 'MaruBuri', sans-serif !important;
     .call-phone-num { font-size: 22px; font-weight: bold; color: var(--text-main); margin: 12px 0 20px; letter-spacing: 1px; }
     .call-btn-group { display: flex; gap: 10px; width: 100%; }
     .btn-call-action { flex: 1; padding: 14px; border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; text-align: center; cursor: pointer; }
-  </style>
+
+  /* --- 큰 글씨 보기 버튼 및 모드 스타일 --- */
+    /* --- 큰 글씨 보기 버튼 래퍼(위치 고정용) --- */
+    .fixed-btn-wrapper {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 430px; /* 청첩장 크기와 똑같이 맞춤 */
+      z-index: 9000;
+      pointer-events: none; /* 투명한 껍데기라 스크롤/터치 방해 안 함 */
+      display: flex;
+      justify-content: flex-end; /* 버튼을 오른쪽으로 밀기 */
+      padding-right: 20px;
+    }
+
+    /* --- 실제 버튼 디자인 --- */
+    .btn-text-size {
+      pointer-events: auto;
+      background: #ffffff;
+      border: 1px solid var(--pink-dark);
+      color: var(--text-main);
+      width: 44px;  
+      height: 44px; 
+      border-radius: 50%;  
+      font-size: 18px; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+
+    /* 큰 글씨 모드가 켜졌을 때 커질 글자들 세팅 */
+    body.large-text-mode .section-title-pink { font-size: 26px; }
+    body.large-text-mode .cover-date-banner { font-size: 17px; }
+    body.large-text-mode .invitation-text { font-size: 19px; line-height: 2.3; }
+    body.large-text-mode .profile-name { font-size: 22px; }
+    body.large-text-mode .profile-role { font-size: 16px; }
+    body.large-text-mode .profile-parents { font-size: 16px; }
+    body.large-text-mode .location-title { font-size: 22px; }
+    body.large-text-mode .location-addr { font-size: 16px; }
+    body.large-text-mode .transport-box { font-size: 16px; }
+    body.large-text-mode .transport-box span { font-size: 15px !important; }
+    body.large-text-mode .acc-header { font-size: 18px; }
+    body.large-text-mode .acc-body p { font-size: 15px !important; }
+    body.large-text-mode .guest-snap-desc { font-size: 16px; }
+    body.large-text-mode .rsvp-intro-desc { font-size: 16px; }
+    body.large-text-mode .btn-pink { font-size: 17px; }
+</style>
 </head>
 <body class="stop-scroll" oncontextmenu="return false" ondragstart="return false">
 
@@ -685,6 +736,10 @@ font-family: 'MaruBuri', sans-serif !important;
 </div>
 
 <div class="mobile-container">
+
+<div class="fixed-btn-wrapper">
+    <button id="btnTextSizeToggle" class="btn-text-size" onclick="toggleTextSize()">🔍</button>
+  </div>
 
   <!-- 1. MAIN COVER -->
   <div class="main-cover">
@@ -1335,7 +1390,20 @@ font-family: 'MaruBuri', sans-serif !important;
     alert(`${name}님, 참석 여부가 성공적으로 전달되었습니다. 감사합니다!`);
     closeRsvp();
   }
-</script>
+/* 큰 글씨 토글 기능 스크립트 */
+  function toggleTextSize() {
+    const body = document.body;
+    const btn = document.getElementById('btnTextSizeToggle');
+    
+    body.classList.toggle('large-text-mode');
+    
+    // 켜져있으면 ➖ 아이콘으로, 꺼져있으면 🔍 아이콘으로 변경
+    if (body.classList.contains('large-text-mode')) {
+      btn.innerHTML = '➖';
+    } else {
+      btn.innerHTML = '🔍';
+    }
+  }</script>
 
 </body>
 </html>
