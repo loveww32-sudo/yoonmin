@@ -363,7 +363,7 @@
     .profile-parents { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
 
     .calendar { width: 100%; max-width: 320px; margin-top: 10px; }
-    .calendar-header { font-weight: 600; font-size: 20px; color: var(--pink-dark); margin-bottom: 20px; }
+    .calendar-header { font-weight: 600; font-size: 20px; color: #f6b0b9; margin-bottom: 20px; }
     .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px 0; font-size: 13px; }
     .calendar-grid div { height: 32px; display: flex; justify-content: center; align-items: center; }
     .weekday { color: var(--pink-dark); font-size: 12px; }
@@ -504,8 +504,8 @@
       background: var(--pink-main);
       color: var(--pink-dark);
       border: none;
-      width: 28px;
-      height: 28px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -845,7 +845,7 @@
       <div class="location-title-row">
         <div class="location-title">라포레 웨딩홀</div>
         <button class="btn-call-icon" onclick="openCallModal()" title="전화 문의">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         </button>
       </div>
 
@@ -870,12 +870,24 @@
       </div>
       
      <div class="transport-box">
+  <!-- 대중교통 안내 -->
+  <strong>대중교통 안내</strong>
+  <p style="line-height: 1.8; margin-bottom: 28px;">
+    <strong>지하철 이용 시</strong>
+    <span style="font-size: 13px; color: var(--text-sub); letter-spacing: -0.4px;">7호선 상동역 8번 출구 앞 도보 1분 (다승프라자)</span><br><br>
+
+    <strong>버스 이용 시</strong>
+    <span style="font-size: 13px; color: var(--text-sub); letter-spacing: -0.4px;">상동역 8번출구.세이브존 정류장 하차</span>
+  </p>
+</div>
+<div class="transport-box">
+  <!-- 자차 안내 -->
   <strong>자차 안내</strong>
   <p style="line-height: 1.8;">
-    <strong>제 1 주차장 : 다승프라자 (라포레 웨딩홀 건물)</strong><br>
+    <strong>제 1 주차장 : 다승프라자 (라포레 웨딩홀 건물)</strong>
     <span style="font-size: 13px; color: var(--text-sub); letter-spacing: -0.4px;">경기 부천시 원미구 길주로 125 (3시간 무료)</span><br><br>
 
-    <strong>제 2 주차장 : 부천테크노파크 2단지</strong><br>
+    <strong>제 2 주차장 : 부천테크노파크 2단지</strong>
     <span style="font-size: 13px; color: var(--text-sub); letter-spacing: -0.4px;">경기 부천시 원미구 송내대로 388 (3시간 무료)</span><br><br>
 
     ※ 예식장 주차장이 협소합니다.<br>
@@ -1017,14 +1029,14 @@
     <div class="rsvp-group">
       <span class="rsvp-label">신랑 민교, 신부 윤서 중 어느 분과의 인연이신가요?</span>
       <div class="option-buttons" id="sideGroup">
-        <button class="btn-option selected" onclick="selectOption(this)" data-value="신랑 측">신랑 측</button>
-        <button class="btn-option" onclick="selectOption(this)" data-value="신부 측">신부 측</button>
+        <button class="btn-option selected" onclick="selectOption(this)" data-value="신랑측">신랑측</button>
+        <button class="btn-option" onclick="selectOption(this)" data-value="신부측">신부측</button>
       </div>
     </div>
     <div class="rsvp-group">
       <span class="rsvp-label">12월 12일 토요일, 예식에 함께해 주실 수 있나요?</span>
       <div class="option-buttons" id="attendGroup">
-        <button class="btn-option selected" onclick="selectOption(this)" data-value="참석 할게요">참석 할게요</button>
+        <button class="btn-option selected" onclick="selectOption(this)" data-value="참석할게요">참석할게요</button>
         <button class="btn-option" onclick="selectOption(this)" data-value="참석이 어려워요">참석이 어려워요</button>
       </div>
     </div>
